@@ -1,29 +1,36 @@
 
-print("Hi Im  PizzaBot., what do you want?")
-print("Ok  look here im gonna ask you some questions, you answer press enter got it!?  ")
+print("Hi Im  PizzaBot. How can I assist you today?")
+print("Just going to ask a few questions, please press enter after your answer.  ")
 
 
-userName = input(f"\nHWhat your name?")
+
+userName = input(f"\nHEnter your name:  ")
+while len(userName) == 0:
+    userName = input("Name cannot be left blank!   Please enter your name:  ")
+   
 if userName.lower() == "Gene Shaffer":
-    print(f"\nOh My God!!!!  Its him!!      Its Really him!!    What a pleasure to finally meet you")
+    print(f"\nOh My God!!!!  Its him!!      Its Really him!!    What a pleasure to finally meet you!!  ")
 else:
     print(f"\nHello {userName} nice to meet you. ")
    
     
-
 size = input("\nWhat size do you want?  Enter  small,   medium, or  large:  ")
-while len(size) == 0:
-    size = input("Wrong answer  Enter small, medium, or large:  ")
+while size.lower() not in ["small" , "medium" , "large"]:
+    size = input("Cannot be left blank!    Enter small, medium, or large:  ")
     
 flavor = input("\nWhat flavor?:  ")
 while len(flavor) == 0:
-    flavor = input("\nYou got to have some flavor, Enter a flavor:  ")
+    flavor = input("\nCannot be left blank!, Enter a flavor:  ")
     
 crustType = input("\nWhat style crust?:  ")
 while len(crustType) == 0:
-    crustType = input("\nWhat kind of crust?:  ")
+    crustType = input("\nCannot be left blank !!!  Enater a crust type.:  ")
+    
     
 quantity = input("\nHow many you want?   Enter a number value:  ")
+while not quantity.isdigit():
+    quantity = input("\nValue not recognized. Enter a numeric value:  ")
+    
 quantity = int(quantity)
 
 method = input("\nFor carry out or delivery?:  ")
